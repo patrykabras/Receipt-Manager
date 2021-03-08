@@ -7,10 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 import java.util.List;
 
@@ -33,6 +31,7 @@ public class ShopreceiptmanagerApplication implements CommandLineRunner {
 		String sql = "SELECT * FROM USERS";
 
 		List<User> userstableList = jdbcTemplate.query(sql, BeanPropertyRowMapper.newInstance(User.class));
+
 
 		userstableList.forEach(System.out :: println);
 	}
